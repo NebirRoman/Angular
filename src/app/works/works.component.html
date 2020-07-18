@@ -1,0 +1,14 @@
+<div class="header">
+    <div class="container">
+        <div class="works">
+            <p>Last Works >>></p>
+            <a routerLink="/works/wordslist" class="btn" (click)="active($event)">Cenzor</a>
+            <a routerLink="/works/taskslist" class="btn" (click)="active($event)">Tasks</a>
+            <a routerLink="/works/userslist" class="btn" (click)="active($event)">Users</a>
+        </div>
+        <div class="back"> 
+            <a routerLink="/home" class="back" (click)="removeActive()">Back to Home</a>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

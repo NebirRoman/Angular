@@ -1,0 +1,42 @@
+<div class="main">
+    <div class="container">
+        <h2>Plan your day</h2>
+        <h3>Count of task {{ count }}</h3>
+        <hr>
+        <form>
+            <input type="text" [(ngModel)]="task" name="task" [ngClass]="validTask ? '' : 'invalid'">
+            <input type="button" *ngIf="!saveMod" value="Add" (click)="addTask()">
+            <input type="button" *ngIf="saveMod" value="Save" (click)="saveTask()">
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Task</th>
+                    <th>Check</th>
+                    <th>Done/In progress</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let task of taskList; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{task.name}}</td>
+                    <td><input type="checkbox" (click)="changeStatus(task)"></td>
+                    <td>
+                        <span *ngIf="task.status" class="done">Done</span>
+                        <span *ngIf="!task.status" class="in-progress">In progress</span>
+                    </td>
+                    <td>
+                        <input type="button" (click)="editTask(task, i)" value="Edit" class="edit">
+                    </td>
+                    <td>
+                        <input type="button" value="Delete" (click)="deleteTask(i)" [disabled]="!task.status" class="delete">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

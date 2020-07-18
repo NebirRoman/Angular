@@ -1,0 +1,35 @@
+<div class="container">
+    <form class="form">
+        <p>Login</p>
+        <input type="text" [(ngModel)]="login" name="login" placeholder="Enter login" [ngClass]="validLogin ? '' : 'invalid'">
+        <p>Password</p>
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Enter password" [ngClass]="validPassword ? '' : 'invalid'">
+        <p>Email address</p>
+        <input type="text" [(ngModel)]="email" name="email" placeholder="Enter email" [ngClass]="validEmail ? '' : 'invalid'">
+        <input type="button" *ngIf="!saveStatus" (click)="addUser()" value="Add user" class="add-btn">
+        <input type="button" *ngIf="saveStatus" (click)="saveUser()" value="Save user" class="save-btn">
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Login</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ user.login }}</td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.email }}</td>
+                <td><input type="button" (click)="editUser(i)" value="Edit" class="edit-btn"></td>
+                <td><input type="button" (click)="deleteUser(i)" value="Delete" class="delete-btn"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

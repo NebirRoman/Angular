@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="card" *ngFor="let work of worksList; let i = index">
+        <img [src]="work.img">
+        <p>{{ work.title }}</p>
+        <a [routerLink]="work.details" (click)="activeBtn(i)">Details</a>
+    </div>
+</div>

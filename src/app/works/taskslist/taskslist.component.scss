@@ -1,0 +1,121 @@
+.main{
+    background-color: rgb(240, 240, 240);
+    height: calc(100vh - 110px);
+    overflow-x: hidden;
+}
+
+.container{
+    width: 80vw;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+
+h3{
+    margin: 5px 0;
+}
+
+form{
+    margin: 15px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type=text]{
+    width: 78%;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgb(170, 170, 170);
+    outline: none;
+    padding: 10px;
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    &:focus{
+        border-color: rgb(0, 195, 255);
+        box-shadow: 0 0 2px 1px rgb(0, 195, 255);
+    }
+}
+
+form input[type=button]{
+    width: 20%;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    background-color: rgb(0, 160, 0);
+    border: 1px solid rgb(0, 140, 0);
+    &:hover{
+        background-color: rgb(0, 140, 0);
+        border-color: rgb(0, 114, 0);
+    }
+    &:active{
+        border-color: rgb(230, 230, 230);
+    }
+}
+
+input[type=checkbox]{
+    cursor: pointer;
+}
+
+table{
+    width: 100%;
+    border-spacing: 0;
+}
+
+th, td{
+    height: 45px;
+    border-top: 1px solid rgb(185, 185, 185);
+    padding: 0 10px;
+    text-align: left;
+}
+
+tbody tr:hover{
+    background-color: lightgray;
+}
+
+.done{
+    color:green;
+}
+
+.in-progress{
+    color: maroon;
+}
+
+input[type=button]{
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+}
+
+.edit{
+    background-color: gold;
+    border: 1px solid rgb(216, 184, 0);
+    &:hover{
+        border-color: rgb(187, 159, 0);
+        background-color: rgb(216, 184, 0);
+    }
+    &:active{
+        border-color: lightgray;
+    }
+}
+
+.delete{
+    background-color: rgb(200, 0, 0);
+    border: 1px solid rgb(180, 0, 0);
+    color: white;
+    &:hover{
+        background-color: rgb(180, 0, 0);
+        border-color: rgb(160, 0, 0);
+    }
+    &:active{
+        border-color: lightgray;;
+    }
+}
+
+.invalid{
+    border: 1px solid crimson;
+    box-shadow: 0 0 2px 1px crimson;
+}

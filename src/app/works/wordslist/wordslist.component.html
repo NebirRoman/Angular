@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="cenzor">
+        <p class="bad">Bad words: <span class="words">{{ badWords }}</span></p>
+        <div class="wrapper">
+            <input type="text" [(ngModel)]="word" name="word" [class]="validWord ? 'add-word' : 'add-word invalid'" [placeholder]="validWord ? 'word here...' : 'Please write a word!'">
+            <input type="button" (click)="addWord()" value="Add" class="add-btn">
+            <input type="button" (click)="reset()" value="Reset" class="reset-btn">
+        </div>
+        <textarea [(ngModel)]="text" name="text" [class]="validText ? 'text' : 'text invalid'" [placeholder]="validText ? 'text here...' : 'Please write some  text!'"></textarea>
+        <input type="button" (click)="cenzor()" value="Cenzor" class="cenzor-btn">
+    </div>
+</div>
